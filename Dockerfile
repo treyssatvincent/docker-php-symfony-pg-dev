@@ -12,5 +12,7 @@ RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
 		opcache \
 		&& docker-php-ext-enable apcu
 
+USER 1000:www-data
+
 WORKDIR /usr/share/nginx/html
 
