@@ -1,7 +1,9 @@
 FROM php:7.4.5-fpm
 
 RUN apt-get update && apt-get install -y libicu-dev \
-		libpq-dev 
+		libpq-dev \
+		&& apt-get autoremove -y \
+		&& rm -rf /var/lib/apt/lists/*
 
 RUN pecl install apcu
 
